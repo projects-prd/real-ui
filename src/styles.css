@@ -1,0 +1,106 @@
+/*!* You can add global styles to this file, and also import other style files *!*/
+/*@import "primeicons/primeicons.css";*/
+/*@import "tailwindcss";*/
+
+/*@keyframes wavePulse {*/
+/*  0% {*/
+/*    transform: scale(1);*/
+/*    opacity: 0.7;*/
+/*  }*/
+/*  20%, 25% {*/
+/*    transform: scale(1.2, 1.4);*/
+/*    opacity: 0;*/
+/*  }*/
+/*  100% {*/
+/*    transform: scale(1.2, 1.4);*/
+/*    opacity: 0;*/
+/*  }*/
+/*}*/
+
+/*.animate-wave-pulse {*/
+/*  position: relative;*/
+/*  z-index: 1;*/
+/*}*/
+
+/*.animate-wave-pulse::after {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*  background-color: #4f46e5;*/
+/*  border-radius: inherit;*/
+/*  z-index: -1;*/
+/*  animation: wavePulse 5s ease-out infinite;*/
+/*}*/
+
+/*.animate-wave-pulse[disabled]::after {*/
+/*  animation: none;*/
+/*}*/
+
+@import "primeicons/primeicons.css";
+@import "tailwindcss";
+
+/* ۲. رفع لایه خاکستری Autofill مرورگر */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f8fafc inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+/* انیمیشن دکمه */
+@keyframes wavePulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  20%, 25% {
+    transform: scale(1.2, 1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.2, 1.4);
+    opacity: 0;
+  }
+}
+
+.animate-wave-pulse {
+  position: relative;
+  z-index: 1;
+}
+
+.animate-wave-pulse::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4f46e5;
+  border-radius: inherit;
+  z-index: -1;
+  animation: wavePulse 5s ease-out infinite;
+}
+
+.animate-wave-pulse[disabled]::after {
+  animation: none;
+}
+.p-checkbox .p-checkbox-box {
+  width: 18px;
+  height: 18px;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 5px;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight .p-checkbox-icon {
+  color: white !important;
+}

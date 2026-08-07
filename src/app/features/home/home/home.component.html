@@ -1,0 +1,98 @@
+<!--<div class="p-4 md:p-6 max-w-6xl mx-auto space-y-6 dir-rtl" dir="rtl">-->
+
+<!--  &lt;!&ndash; ۱. هدر و کارت اصلی کیف پول / اعتبار &ndash;&gt;-->
+<!--  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">-->
+
+<!--    &lt;!&ndash; کارت کیف پول &ndash;&gt;-->
+<!--    <p-card class="shadow-sm border-round-xl">-->
+<!--      <div class="flex justify-content-between align-items-center mb-3">-->
+<!--        <span class="text-500 font-medium">موجودی کیف پول</span>-->
+<!--        <i class="pi pi-wallet text-xl text-primary"></i>-->
+<!--      </div>-->
+<!--      <div class="text-3xl font-bold mb-4">-->
+<!--        {{ walletBalance() | number }} <span class="text-sm font-normal text-500">تومان</span>-->
+<!--      </div>-->
+<!--      <p-button label="افزایش موجودی" icon="pi pi-plus" styleClass="p-button-outlined p-button-sm w-full"></p-button>-->
+<!--    </p-card>-->
+
+<!--    &lt;!&ndash; کارت وضعیت اعتبار (BNPL / وام) &ndash;&gt;-->
+<!--    <p-card class="shadow-sm border-round-xl md:col-span-2">-->
+<!--      <div class="flex justify-content-between align-items-center mb-2">-->
+<!--        <div>-->
+<!--          <span class="text-500 font-medium">اعتبار فعال شما</span>-->
+<!--          <h3 class="text-xl font-bold m-0 mt-1">-->
+<!--            {{ creditLimit() - usedCredit() | number }} <span class="text-sm font-normal text-500">تومان باقی‌مانده</span>-->
+<!--          </h3>-->
+<!--        </div>-->
+<!--        <p-button label="افزایش سقف اعتبار" icon="pi pi-arrow-up-left" styleClass="p-button-sm p-button-success"></p-button>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; نوار پیشرفت مصرف اعتبار &ndash;&gt;-->
+<!--      <div class="mt-4">-->
+<!--        <div class="flex justify-content-between text-xs text-600 mb-1">-->
+<!--          <span>مصرف شده: {{ usedCredit() | number }} تومان</span>-->
+<!--          <span>{{ creditUsagePercentage() }}%</span>-->
+<!--        </div>-->
+<!--        <p-progressBar [value]="creditUsagePercentage()" [showValue]="false" styleClass="h-8px"></p-progressBar>-->
+<!--      </div>-->
+<!--    </p-card>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; ۲. میان‌بر خدمات مالی و اعتباری &ndash;&gt;-->
+<!--  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">-->
+<!--    @for (service of quickServices; track service.label) {-->
+<!--      <div class="bg-white p-4 border-round-xl shadow-sm text-center cursor-pointer hover:shadow-md transition-duration-200">-->
+<!--        <div class="w-3rem h-3rem border-round-circle mx-auto flex align-items-center justify-content-center mb-2 {{ service.color }}">-->
+<!--          <i class="{{ service.icon }} text-xl"></i>-->
+<!--        </div>-->
+<!--        <span class="text-sm font-bold text-700">{{ service.label }}</span>-->
+<!--      </div>-->
+<!--    }-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; ۳. جدول اقساط پیش‌رو &ndash;&gt;-->
+<!--  <p-card header="اقساط پیش‌رو" class="shadow-sm border-round-xl">-->
+<!--    <p-table [value]="upcomingInstallments()" [responsive]="true" styleClass="p-datatable-sm">-->
+<!--      <ng-template pTemplate="header">-->
+<!--        <tr>-->
+<!--          <th>عنوان تسهیلات</th>-->
+<!--          <th>تاریخ سررسید</th>-->
+<!--          <th>مبلغ قسط</th>-->
+<!--          <th>وضعیت</th>-->
+<!--          <th>عملیات</th>-->
+<!--        </tr>-->
+<!--      </ng-template>-->
+<!--      <ng-template pTemplate="body" let-item>-->
+<!--        <tr>-->
+<!--          <td class="font-bold">{{ item.title }}</td>-->
+<!--          <td>{{ item.dueDate }}</td>-->
+<!--          <td>{{ item.amount | number }} تومان</td>-->
+<!--          <td>-->
+<!--            <p-tag [severity]="item.status" [value]="item.statusText"></p-tag>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            <p-button label="پرداخت" styleClass="p-button-sm p-button-primary"></p-button>-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--      </ng-template>-->
+<!--    </p-table>-->
+<!--  </p-card>-->
+
+<!--  &lt;!&ndash; ۴. بنرهای پیشنهادی / کاروسل طرح‌های وام &ndash;&gt;-->
+<!--  <div class="mt-6">-->
+<!--    <h3 class="text-lg font-bold mb-3">طرح‌های ویژه تسهیلات</h3>-->
+<!--    <p-carousel [value]="promotions" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="4000">-->
+<!--      <ng-template let-promo pTemplate="item">-->
+<!--        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-5 border-round-xl flex justify-content-between align-items-center">-->
+<!--          <div>-->
+<!--            <h4 class="text-xl font-bold m-0 mb-2">{{ promo.title }}</h4>-->
+<!--            <p class="m-0 text-sm opacity-90">{{ promo.desc }}</p>-->
+<!--          </div>-->
+<!--          <p-button label="مشاهده و درخواست" styleClass="p-button-warning p-button-raised"></p-button>-->
+<!--        </div>-->
+<!--      </ng-template>-->
+<!--    </p-carousel>-->
+<!--  </div>-->
+
+<!--</div>-->
+<button (click)="onLogout()" >خروج</button>
