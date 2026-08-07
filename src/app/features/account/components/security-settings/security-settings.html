@@ -1,0 +1,123 @@
+<!--<section class="tab-pane animate-fade-in">-->
+<!--  <div class="pane-header">-->
+<!--    <h2>تغییر رمز عبور</h2>-->
+<!--    <p>جهت حفظ امنیت حساب، از رمزهای عبور قوی استفاده کنید.</p>-->
+<!--  </div>-->
+
+<!--  <form class="form-grid single-column">-->
+<!--    <div class="field">-->
+<!--      <label>رمز عبور فعلی</label>-->
+<!--      <p-password [toggleMask]="true" styleClass="w-full" inputStyleClass="custom-input w-full"></p-password>-->
+<!--    </div>-->
+
+<!--    <div class="field">-->
+<!--      <label>رمز عبور جدید</label>-->
+<!--      <p-password [toggleMask]="true" styleClass="w-full" inputStyleClass="custom-input w-full"></p-password>-->
+<!--    </div>-->
+
+<!--    <div class="form-actions">-->
+<!--      <button pButton label="تغییر رمز عبور" icon="fa-solid fa-key" class="submit-btn"></button>-->
+<!--    </div>-->
+<!--  </form>-->
+
+<!--  <div class="pane-header margin-top">-->
+<!--    <h2>نشست‌های فعال</h2>-->
+<!--  </div>-->
+
+<!--  <div class="sessions-list">-->
+<!--    <div *ngFor="let s of sessions" class="session-item" [class.active-session]="s.isCurrentDevice">-->
+<!--      <div class="device-icon">-->
+<!--        <i class="fa-solid" [ngClass]="s.isCurrentDevice ? 'fa-desktop' : 'fa-mobile-button'"></i>-->
+<!--      </div>-->
+<!--      <div class="device-info">-->
+<!--        <h4>{{ s.device }}</h4>-->
+<!--        <span>{{ s.location }} • {{ s.lastActive }}</span>-->
+<!--      </div>-->
+<!--      <span *if="s.isCurrentDevice" class="badge">دستگاه فعلی</span>-->
+<!--      <button *if="!s.isCurrentDevice" class="terminate-btn"><i class="fa-solid fa-power-off"></i> خروج</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<section class="tab-pane animate-fade-in">
+  <!-- بخش تغییر رمز عبور -->
+  <div class="pane-header">
+    <h2>
+      <i class="fa-solid fa-shield-halved"></i>
+      تغییر رمز عبور
+    </h2>
+    <p>
+      <i class="fa-solid fa-circle-info"></i>
+      جهت حفظ امنیت حساب، از رمزهای عبور قوی استفاده کنید.
+    </p>
+  </div>
+
+  <form class="form-grid single-column">
+    <div class="field">
+      <label>
+        <i class="fa-solid fa-lock"></i>
+        رمز عبور فعلی
+      </label>
+      <p-password
+        [toggleMask]="true"
+        styleClass="w-full"
+        inputStyleClass="custom-input w-full">
+      </p-password>
+    </div>
+
+    <div class="field">
+      <label>
+        <i class="fa-solid fa-key"></i>
+        رمز عبور جدید
+      </label>
+      <p-password
+        [toggleMask]="true"
+        styleClass="w-full"
+        inputStyleClass="custom-input w-full">
+      </p-password>
+    </div>
+
+    <div class="form-actions">
+      <button
+        pButton
+        label="تغییر رمز عبور"
+        icon="fa-solid fa-rotate-right"
+        class="submit-btn">
+      </button>
+    </div>
+  </form>
+
+  <!-- بخش نشست‌های فعال -->
+  <div class="pane-header margin-top">
+    <h2>
+      <i class="fa-solid fa-user-shield"></i>
+      نشست‌های فعال
+    </h2>
+  </div>
+
+  <div class="sessions-list">
+    <div *ngFor="let s of sessions" class="session-item" [class.active-session]="s.isCurrentDevice">
+      <div class="device-icon">
+        <i class="fa-solid" [ngClass]="s.isCurrentDevice ? 'fa-desktop' : 'fa-mobile-screen-button'"></i>
+      </div>
+
+      <div class="device-info">
+        <h4>{{ s.device }}</h4>
+        <span>
+          <i class="fa-solid fa-location-dot"></i> {{ s.location }}
+          •
+          <i class="fa-solid fa-clock-rotate-left"></i> {{ s.lastActive }}
+        </span>
+      </div>
+
+      <span *ngIf="s.isCurrentDevice" class="badge">
+        <i class="fa-solid fa-circle-check"></i>
+        دستگاه فعلی
+      </span>
+
+      <button *ngIf="!s.isCurrentDevice" class="terminate-btn">
+        <i class="fa-solid fa-power-off"></i>
+        خروج
+      </button>
+    </div>
+  </div>
+</section>

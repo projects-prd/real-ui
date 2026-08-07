@@ -1,0 +1,15 @@
+<section class="services-container">
+  <div class="section-header">
+    <h2>خدمات وامینو</h2>
+    <a href="#" class="see-all">
+      همه
+      <i class="fa-solid fa-chevron-left"></i>
+    </a>
+  </div>
+
+  <div class="services-grid">
+    @for (item of services; track item.id) {
+      <app-service-card [item]="item"></app-service-card>
+    }
+  </div>
+</section>

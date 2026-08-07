@@ -1,0 +1,25 @@
+.service-category {
+  .category-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.25rem;
+    text-align: right;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem 1rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 420px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

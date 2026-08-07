@@ -1,0 +1,27 @@
+<div class="credit-widget">
+  <div class="widget-header">
+    <div class="header-content">
+      <h3>خدمات وام و اعتبار</h3>
+      <p>خرید کن، قسطی پرداخت کن</p>
+    </div>
+  </div>
+
+  <div class="widget-list">
+    @for (item of creditItems; track item.id) {
+      <a [routerLink]="item.routerLink" class="credit-item">
+        <div class="arrow-icon">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+
+        <div class="item-text">
+          <h4>{{ item.title }}</h4>
+          <span>{{ item.subtitle }}</span>
+        </div>
+
+        <div class="icon-badge">
+          <i [class]="item.icon"></i>
+        </div>
+      </a>
+    }
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<section class="service-category">
+  <h3 class="category-title">{{ category.title }}</h3>
+  <div class="services-grid">
+    @for (item of category.items; track item.id) {
+      <app-services-card [item]="item" />
+    }
+  </div>
+</section>

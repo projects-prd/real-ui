@@ -1,0 +1,25 @@
+<div class="installment-widget">
+  <div class="widget-header">
+    <div class="title-box">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span>سررسید قسط بعدی</span>
+    </div>
+    <span class="days-badge">{{ daysLeft }} روز مانده</span>
+  </div>
+
+  <div class="installment-details">
+    <p class="loan-name">{{ title }}</p>
+    <div class="amount-row">
+      <span class="label">مبلغ قسط:</span>
+      <div class="price">
+        <strong>{{ amount | number }}</strong>
+        <small>تومان</small>
+      </div>
+    </div>
+  </div>
+
+  <button class="pay-btn">
+    <span>پرداخت سریع</span>
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+</div>

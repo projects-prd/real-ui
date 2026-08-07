@@ -1,0 +1,116 @@
+:host {
+  display: block;
+  width: 100%;
+  margin: 3rem 0;
+}
+
+.download-banner {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  border-radius: 28px;
+  padding: 2rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  .banner-content {
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+    align-items: center;
+    gap: 2rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+}
+
+.phone-wrapper {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .phone-img {
+    height: 260px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+    transform: translateY(-10px);
+  }
+}
+
+.text-info {
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+.download-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+
+  .qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .qr-title {
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    .qr-code {
+      width: 75px;
+      height: 75px;
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 4px;
+    }
+  }
+
+  .store-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      color: #1e40af;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

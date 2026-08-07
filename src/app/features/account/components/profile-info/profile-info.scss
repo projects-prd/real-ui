@@ -1,0 +1,250 @@
+//$primary-color: #3b82f6;
+//$primary-hover: #2563eb;
+//$text-main: #1f2937;
+//$text-muted: #6b7280;
+//
+//.pane-header {
+//  margin-bottom: 1.5rem;
+//
+//  h2 {
+//    font-size: 1.3rem;
+//    margin: 0;
+//    color: $text-main;
+//  }
+//
+//  p {
+//    font-size: 0.85rem;
+//    color: $text-muted;
+//    margin-top: 0.2rem;
+//  }
+//}
+//
+//.form-grid {
+//  display: grid;
+//  grid-template-columns: repeat(2, 1fr);
+//  gap: 1.25rem;
+//
+//  @media (max-width: 640px) {
+//    grid-template-columns: 1fr;
+//  }
+//
+//  .field {
+//    display: flex;
+//    flex-direction: column;
+//    gap: 0.4rem;
+//
+//    label {
+//      font-size: 0.85rem;
+//      font-weight: 600;
+//      color: $text-main;
+//    }
+//  }
+//}
+//
+//.input-icon-wrapper {
+//  position: relative;
+//  display: flex;
+//  align-items: center;
+//
+//  .input-icon {
+//    position: absolute;
+//    right: 1rem;
+//    color: $text-muted;
+//    font-size: 0.95rem;
+//    pointer-events: none;
+//    z-index: 1;
+//  }
+//}
+//
+//:host ::ng-deep .custom-input {
+//  width: 100% !important;
+//  padding: 0.75rem 2.5rem 0.75rem 1rem !important;
+//  border-radius: 12px !important;
+//  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+//  background: rgba(255, 255, 255, 0.8) !important;
+//  font-size: 0.9rem !important;
+//  transition: all 0.2s ease-in-out !important;
+//
+//  &:focus {
+//    border-color: $primary-color !important;
+//    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15) !important;
+//    background: #ffffff !important;
+//  }
+//}
+//
+//.form-actions {
+//  grid-column: 1 / -1;
+//  display: flex;
+//  justify-content: flex-end;
+//  margin-top: 1rem;
+//
+//  .submit-btn {
+//    background: $primary-color !important;
+//    color: white;
+//    border: none !important;
+//    border-radius: 12px !important;
+//    padding: 0.75rem 1.75rem !important;
+//    font-weight: 600 !important;
+//    transition: all 0.3s ease !important;
+//
+//    &:hover {
+//      background: $primary-hover !important;
+//      transform: translateY(-2px);
+//      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3) !important;
+//    }
+//  }
+//}
+//
+//.animate-fade-in {
+//  animation: fadeIn 0.35s ease forwards;
+//}
+//
+//@keyframes fadeIn {
+//  from {
+//    opacity: 0;
+//    transform: translateY(10px);
+//  }
+//  to {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//}
+$primary-purple: rgb(139, 92, 246);
+$primary-gradient: linear-gradient(135deg, rgb(139, 92, 246) 0%, rgb(109, 40, 217) 100%);
+$primary-gradient-hover: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(91, 33, 182) 100%);
+$text-main: #1f2937;
+$text-muted: #6b7280;
+
+.pane-header {
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: $text-main;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      color: $primary-purple;
+    }
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $text-muted;
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    i {
+      color: $primary-purple;
+    }
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: $text-main;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      i {
+        color: $primary-purple;
+      }
+    }
+  }
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .input-icon {
+    position: absolute;
+    right: 1rem;
+    color: $primary-purple; // رنگ بنفش برای آیکون‌های ورودی
+    font-size: 0.95rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+:host ::ng-deep .custom-input {
+  width: 100% !important;
+  padding: 0.75rem 2.5rem 0.75rem 1rem !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.9rem !important;
+  transition: all 0.2s ease-in-out !important;
+
+  &:focus {
+    border-color: $primary-purple !important;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2) !important; // شادو و فوکوس بنفش
+    background: #ffffff !important;
+  }
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  .submit-btn {
+    background: $primary-gradient !important; // گرادینت بنفش
+    color: #ffffff !important; // متن سفید
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 1.75rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+
+    // استایل‌دهی مستقیم به لیبل و آیکون داخلی PrimeNG
+    ::ng-deep .p-button-label,
+    ::ng-deep .p-button-icon {
+      color: #ffffff !important;
+    }
+
+    &:hover {
+      background: $primary-gradient-hover !important;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(109, 40, 217, 0.35) !important;
+    }
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

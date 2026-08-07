@@ -1,3 +1,27 @@
+<!--<app-toast-container />-->
+
+<!--@if (!isAuthPage()) {-->
+<!--  <app-header (logout)="onLogout()"></app-header>-->
+<!--  <app-menu-bar></app-menu-bar>-->
+<!--}-->
+
+<!--<main [class.main-layout]="!isAuthPage()">-->
+<!--  <router-outlet />-->
+<!--</main>-->
+
+<!--@if (!isAuthPage()) {-->
+<!--  <app-footer></app-footer>-->
+<!--}-->
 <app-toast-container />
+
+@if (!isAuthPage()) {
+  <app-header (logout)="onLogout()"></app-header>
+  <app-menu-bar></app-menu-bar>
+}
+
+<!-- بدون هیچ تگ اضافی دور روتر اوت‌لت -->
 <router-outlet />
 
+@if (!isAuthPage()) {
+  <app-footer></app-footer>
+}

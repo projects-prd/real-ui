@@ -1,0 +1,44 @@
+<section class="tab-pane animate-fade-in">
+  <div class="pane-header">
+    <h2>اطلاعات شخصی</h2>
+    <p>اطلاعات کاربری و ارتباطی خود را ویرایش کنید.</p>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" class="form-grid" *ngIf="user">
+    <div class="field">
+      <label>نام و نام خانوادگی</label>
+      <div class="input-icon-wrapper">
+        <i class="fa-solid fa-user input-icon"></i>
+        <input type="text" pInputText [(ngModel)]="user.fullName" name="fullName" class="custom-input" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>ایمیل</label>
+      <div class="input-icon-wrapper">
+        <i class="fa-solid fa-envelope input-icon"></i>
+        <input type="email" pInputText [(ngModel)]="user.email" name="email" class="custom-input" dir="ltr" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>شماره همراه</label>
+      <div class="input-icon-wrapper">
+        <i class="fa-solid fa-mobile-screen input-icon"></i>
+        <input type="text" pInputText [(ngModel)]="user.phone" name="phone" class="custom-input" dir="ltr" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>عنوان شغلی</label>
+      <div class="input-icon-wrapper">
+        <i class="fa-solid fa-briefcase input-icon"></i>
+        <input type="text" pInputText [(ngModel)]="user.role" name="role" class="custom-input" />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button pButton label="ذخیره تغییرات" icon="fa-solid fa-check" class="submit-btn" type="submit"></button>
+    </div>
+  </form>
+</section>
