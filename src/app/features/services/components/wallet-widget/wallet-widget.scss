@@ -1,0 +1,68 @@
+.wallet-widget {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .wallet-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .balance-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #6b7280;
+      font-size: 0.85rem;
+
+      i {
+        color: #8b5cf6;
+        font-size: 1.1rem;
+      }
+    }
+
+    .balance-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+
+      strong {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #1f2937;
+      }
+
+      small {
+        font-size: 0.75rem;
+        color: #9ca3af;
+      }
+    }
+  }
+
+  .topup-btn {
+    width: 100%;
+    border: none;
+    background: #f3e8ff;
+    color: #7e22ce;
+    padding: 0.75rem;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #7e22ce;
+      color: #ffffff;
+    }
+  }
+}

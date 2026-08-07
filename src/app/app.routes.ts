@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginPageComponent } from '@features/auth/pages/login-page/login-page';
 import { RegisterPageComponent } from '@features/auth/pages/register-page/register-page';
-import { HomeComponent } from '@features/home/home/home.component';
+import { HomeComponent } from '@features/home/pages/home/home.component';
 import { authGuard } from '@core/guards/auth.guard';
 export const routes: Routes = [
   {
@@ -14,6 +14,18 @@ export const routes: Routes = [
     component: HomeComponent,
     title: 'صفحه اصلی',
     canActivate: [authGuard],
+  },
+  {
+    path: 'account',
+    title: 'حساب کاربری',
+    canActivate: [authGuard],
+    loadChildren: () => import('./features/account/account.routes').then((m) => m.ACCOUNT_ROUTES),
+  },
+  {
+    path: 'services',
+    title: 'خدمات',
+    loadChildren: () =>
+      import('./features/services/services.routes').then((m) => m.SERVICES_ROUTES),
   },
   {
     path: 'auth',
@@ -34,10 +46,5 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
     ],
-  },
-
-  {
-    path: '**',
-    redirectTo: 'auth/login',
   },
 ];

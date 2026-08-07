@@ -1,0 +1,138 @@
+$primary-purple: rgb(139, 92, 246);
+$primary-gradient: linear-gradient(135deg, rgb(139, 92, 246) 0%, rgb(109, 40, 217) 100%);
+$glass-bg: rgba(255, 255, 255, 0.55);
+$glass-border: rgba(255, 255, 255, 0.7);
+$text-main: #1f2937;
+$text-muted: #6b7280;
+
+.account-page {
+  min-height: 100vh;
+  padding: 13rem 1rem 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #fcfaff 0%, #f3e8ff 100%); // پس‌زمینه با تم ملایم بنفش
+}
+
+.account-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+
+  @media (max-width: 868px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.account-sidebar,
+.account-content {
+  background: $glass-bg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid $glass-border;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(109, 40, 217, 0.06);
+  padding: 1.5rem;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  .avatar-wrapper {
+    position: relative;
+
+    .avatar-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 8px 16px rgba(139, 92, 246, 0.15);
+    }
+
+    .change-avatar-btn {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      background: $primary-gradient; // دکمه تغییر آواتار با گرادینت بنفش
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 4px 12px rgba(109, 40, 217, 0.4);
+      }
+    }
+  }
+
+  .user-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-main;
+    margin: 0.5rem 0 0;
+  }
+
+  .user-role {
+    font-size: 0.8rem;
+    color: $text-muted;
+  }
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    color: $text-muted;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.75);
+      color: $text-main;
+
+      i {
+        color: $primary-purple; // رنگ بنفش آیکون در حالت هاور
+        transform: translateX(-3px);
+      }
+    }
+
+    &.active {
+      background: $primary-gradient; // منوی فعال با گرادینت بنفش
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(109, 40, 217, 0.35); // سایه بنفش
+
+      i {
+        color: #fff;
+      }
+    }
+  }
+}

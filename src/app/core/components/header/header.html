@@ -1,0 +1,45 @@
+<div class="header-wrapper">
+  <p-toolbar styleClass="glass-header">
+    <ng-template pTemplate="start">
+      <div class="logo-container">
+        <img src="assets/images/logo-text-new.png" alt="Logo" class="logo-img" />
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="center">
+      <nav class="nav-links">
+        <a href="#" class="nav-item">اعتبار و وام</a>
+        <a href="#" class="nav-item">بیمه</a>
+        <a href="#" class="nav-item">خدمات سازمانی</a>
+        <a href="#" class="nav-item">خدمات کسب‌وکار</a>
+      </nav>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <div class="header-actions">
+
+        <p-menu
+          #userMenu
+          [model]="userMenuItems"
+          [popup]="true"
+          appendTo="body"
+          styleClass="user-custom-menu" />
+
+        <p-button
+          icon="pi pi-user"
+          [rounded]="true"
+          [text]="true"
+          severity="secondary"
+          (click)="userMenu.toggle($event)"
+        />
+
+        <p-button
+          icon="pi pi-bell"
+          [rounded]="true"
+          [text]="true"
+          severity="secondary"
+        />
+      </div>
+    </ng-template>
+  </p-toolbar>
+</div>

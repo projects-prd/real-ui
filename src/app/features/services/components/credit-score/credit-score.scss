@@ -1,0 +1,60 @@
+.score-widget {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border-radius: 20px;
+  padding: 1.25rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+
+  .score-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #c7d2fe;
+
+    i { color: #818cf8; }
+  }
+
+  .score-gauge {
+    text-align: center;
+
+    .score-number {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: #38edf6;
+    }
+
+    .score-status {
+      font-size: 0.75rem;
+      color: #a5b4fc;
+    }
+  }
+
+  .progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+
+    .fill {
+      height: 100%;
+      background: linear-gradient(90deg, #38edf6, #818cf8);
+    }
+  }
+
+  .check-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: rgba(255, 255, 255, 0.2); }
+  }
+}

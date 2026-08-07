@@ -1,0 +1,39 @@
+<div class="account-page">
+  <div class="account-container">
+
+    <!-- Sidebar -->
+    <aside class="account-sidebar" *ngIf="user">
+      <div class="profile-card">
+        <div class="avatar-wrapper">
+          <img [src]="user.avatar" alt="Avatar" class="avatar-img" />
+          <button class="change-avatar-btn"><i class="fa-solid fa-camera"></i></button>
+        </div>
+        <h3 class="user-name">{{ user.fullName }}</h3>
+        <span class="user-role">{{ user.role }}</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a routerLink="profile" routerLinkActive="active" class="menu-item">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>اطلاعات شخصی</span>
+        </a>
+
+        <a routerLink="security" routerLinkActive="active" class="menu-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>امنیت و رمز عبور</span>
+        </a>
+
+        <a routerLink="notifications" routerLinkActive="active" class="menu-item">
+          <i class="fa-solid fa-bell"></i>
+          <span>اعلان‌ها</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Outlet -->
+    <main class="account-content">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+</div>

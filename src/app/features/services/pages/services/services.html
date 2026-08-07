@@ -1,0 +1,15 @@
+<div class="services-page-container">
+  <main class="services-main-content">
+    @for (category of categories; track category.id) {
+      <app-service-category [category]="category" />
+    }
+  </main>
+
+  <aside class="services-sidebar-content">
+    <app-credit-widget />
+    <app-wallet-widget />
+    <app-credit-score></app-credit-score>
+    <app-upcoming-installment></app-upcoming-installment>
+    <app-support-widget />
+  </aside>
+</div>

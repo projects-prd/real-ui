@@ -1,0 +1,25 @@
+<section class="hero-grid">
+  <div class="main-banner">
+    <div class="banner-content">
+      <span class="badge">{{ heroData.mainBanner.badge }}</span>
+      <h2>{{ heroData.mainBanner.title }}</h2>
+      <p>{{ heroData.mainBanner.subtitle }}</p>
+      <button class="cta-btn">{{ heroData.mainBanner.buttonText }}</button>
+    </div>
+    <div class="banner-image-wrapper">
+      <img [src]="heroData.mainBanner.image" alt="اعتبار خرید وامینو" class="hero-img" />
+    </div>
+  </div>
+
+  <div class="side-banners">
+    @for (banner of heroData.sideBanners; track banner.id) {
+      <div class="side-card">
+        <img [src]="banner.image" [alt]="banner.title" />
+        <div class="overlay-text">
+          <h4>{{ banner.title }}</h4>
+          <p>{{ banner.subtitle }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
