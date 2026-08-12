@@ -16,18 +16,18 @@
 //     return this.http.post(`${this.dbUrl}/users.json`, credentials);
 //   }
 // }
-import { AfterViewInit, inject, Injectable, OnInit, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  user,
   GoogleAuthProvider,
-  signInWithPopup,
-  UserCredential,
   sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
   updateProfile,
+  user,
+  UserCredential
 } from '@angular/fire/auth';
 import { from, Observable } from 'rxjs';
 import { LoginCredentials, RegisterCredentials } from '@features/auth/models/auth.model';

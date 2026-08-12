@@ -5,6 +5,7 @@ import { ForgotPasswordPage } from '@features/auth/pages/forgot-password-page/fo
 import { HomeComponent } from '@features/home/pages/home/home.component';
 import { authGuard } from '@core/guards/auth.guard';
 import { guestGuard } from '@core/guards/guest.guard';
+
 export const routes: Routes = [
   {
     path: '',

@@ -1,6 +1,6 @@
-import { Component, Input, output, Output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { Toolbar, ToolbarModule } from 'primeng/toolbar';
+import { ToolbarModule } from 'primeng/toolbar';
 import { CommonModule } from '@angular/common';
 import { MenuItem, SharedModule } from 'primeng/api';
 import { Menu } from 'primeng/menu';

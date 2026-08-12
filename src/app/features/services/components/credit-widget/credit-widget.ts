@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CreditItem } from '@features/services/models/services.model';
 
-
 @Component({
   selector: 'app-credit-widget',
   standalone: true,

@@ -1,11 +1,10 @@
 import { Component, inject, viewChild } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { BaseComponent } from '@shared/base/base.component';
 import { LoginFormComponent } from '@features/auth/components/login-form/login-form';
 import { LoginCredentials } from '@features/auth/models/auth.model';
 import { AuthService } from '@features/auth/services/auth.service';
 import { finalize } from 'rxjs';
-import { NotificationService } from '@core/services/notiification.service';
 
 @Component({
   selector: 'app-login-page',
@@ -15,8 +14,7 @@ import { NotificationService } from '@core/services/notiification.service';
 })
 export class LoginPageComponent extends BaseComponent {
   private authService = inject(AuthService);
-  public router = inject(Router);
-  private notificationService = inject(NotificationService);
+
   loginForm = viewChild.required(LoginFormComponent);
 
   onLoginSubmit(credentials: LoginCredentials): void {
@@ -29,7 +27,9 @@ export class LoginPageComponent extends BaseComponent {
       .subscribe({
         next: () => {
           this.notificationService.success('ورود موفق', 'خوش آمدید! شما با موفقیت وارد شدید');
-          this.router.navigate(['/home']);
+          this.router.navigate(['/home'], {
+            state: { justLoggedIn: true },
+          });
         },
         error: (error) => {
           this.notificationService.error('خطا در ورود', 'نام کاربری یا رمز عبور اشتباه است');

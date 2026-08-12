@@ -23,10 +23,7 @@ export class RegisterPageComponent {
       .pipe(finalize(() => this.registerForm?.stopSubmitting()))
       .subscribe({
         next: () => {
-          this.notificationService.success(
-            'ثبت‌نام موفق',
-            'حساب شما ساخته شد و وارد شدید.',
-          );
+          this.notificationService.success('ثبت‌نام موفق', 'حساب شما ساخته شد و وارد شدید.');
           this.router.navigate(['/home']);
         },
         error: (error) => {

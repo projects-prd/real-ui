@@ -28,8 +28,9 @@ export class ServicesSectionComponent {
       title: 'خدمات وامینوکارت',
       subtitle: 'کارت اعتباری هوشمند با بازپرداخت آسان',
       bgGradient: 'linear-gradient(135deg, #475569 0%, #0f172a 100%)',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=400&auto=format&fit=crop',
-      link: '/card'
+      image:
+        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=400&auto=format&fit=crop',
+      link: '/card',
     },
     {
       id: '3',

@@ -1,0 +1,40 @@
+@if (visible()) {
+  <div
+    class="loading-root"
+    [class.loading-root--overlay]="overlay()"
+    [class.loading-root--fullscreen]="fullScreen()"
+    role="status"
+    aria-live="polite"
+    [attr.aria-label]="message() || 'در حال بارگذاری'"
+  >
+    <div class="loading-card" [class]="'loading-card--' + size()">
+      @switch (variant()) {
+        @case ('dots') {
+          <div class="loading-dots" [class]="'loading-dots--' + size()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        }
+        @case ('ring') {
+          <div class="loading-ring" [class]="'loading-ring--' + size()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        }
+        @default {
+          <div class="loading-spinner" [class]="'loading-spinner--' + size()">
+            <div class="loading-spinner__track"></div>
+            <div class="loading-spinner__arc"></div>
+            <div class="loading-spinner__glow"></div>
+          </div>
+        }
+      }
+
+      @if (message()) {
+        <p class="loading-message">{{ message() }}</p>
+      }
+    </div>
+  </div>
+}
