@@ -22,12 +22,19 @@ export class RegisterPageComponent {
       .registerUser(formData)
       .pipe(finalize(() => this.registerForm?.stopSubmitting()))
       .subscribe({
-        next: (data) => {
-          this.notificationService.success('ثبت نام با موفقیت انجام شد', 'خوش آمدید! اطلاعات شما با موفقیت ثبت شد');
-          this.router.navigate(['/login']);
+        next: () => {
+          this.notificationService.success(
+            'ثبت‌نام موفق',
+            'حساب شما ساخته شد و وارد شدید.',
+          );
+          this.router.navigate(['/home']);
         },
         error: (error) => {
-          console.log(error);
+          const message =
+            error?.code === 'auth/email-already-in-use'
+              ? 'این ایمیل قبلاً ثبت شده است.'
+              : 'ثبت‌نام انجام نشد. لطفاً دوباره تلاش کنید.';
+          this.notificationService.error('خطا در ثبت‌نام', message);
         },
       });
   }

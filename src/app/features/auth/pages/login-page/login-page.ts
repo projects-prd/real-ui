@@ -50,8 +50,13 @@ export class LoginPageComponent extends BaseComponent {
 
   onGoogleLogin(): void {
     this.authService.loginWithGoogle().subscribe({
-      next: () => this.router.navigate(['/home']),
-      error: (err) => console.error(err),
+      next: () => {
+        this.notificationService.success('ورود موفق', 'با حساب گوگل وارد شدید.');
+        this.router.navigate(['/home']);
+      },
+      error: () => {
+        this.notificationService.error('خطا در ورود', 'ورود با گوگل انجام نشد.');
+      },
     });
   }
 

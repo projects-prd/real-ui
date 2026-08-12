@@ -26,6 +26,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   UserCredential,
+  sendPasswordResetEmail,
+  updateProfile,
 } from '@angular/fire/auth';
 import { from, Observable } from 'rxjs';
 import { LoginCredentials, RegisterCredentials } from '@features/auth/models/auth.model';
@@ -51,8 +53,17 @@ export class AuthService {
       this.auth,
       credentials.email,
       credentials.password,
-    );
+    ).then(async (credential) => {
+      if (credentials.fullName) {
+        await updateProfile(credential.user, { displayName: credentials.fullName });
+      }
+      return credential;
+    });
     return from(promise);
+  }
+
+  resetPassword(email: string): Observable<void> {
+    return from(sendPasswordResetEmail(this.auth, email));
   }
 
   loginWithGoogle(): Observable<UserCredential> {

@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import { LoginPageComponent } from '@features/auth/pages/login-page/login-page';
 import { RegisterPageComponent } from '@features/auth/pages/register-page/register-page';
+import { ForgotPasswordPage } from '@features/auth/pages/forgot-password-page/forgot-password-page';
 import { HomeComponent } from '@features/home/pages/home/home.component';
 import { authGuard } from '@core/guards/auth.guard';
+import { guestGuard } from '@core/guards/guest.guard';
 export const routes: Routes = [
   {
     path: '',
@@ -29,6 +31,7 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
+    canActivate: [guestGuard],
     children: [
       {
         path: 'login',
@@ -39,6 +42,11 @@ export const routes: Routes = [
         path: 'register',
         component: RegisterPageComponent,
         title: 'ثبت‌نام',
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordPage,
+        title: 'بازیابی رمز عبور',
       },
       {
         path: '',
