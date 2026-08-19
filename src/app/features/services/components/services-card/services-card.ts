@@ -15,14 +15,13 @@ export class ServicesCard {
   hasImageError = false;
 
   onImageError() {
-    this.hasImageError = true; // در صورت خرابی عکس، سیستم به آیکون سوییچ می‌کند
+    this.hasImageError = true;
   }
 
   getFallbackIcon(item: ServiceItem): string {
     if (item.icon && !item.isImage) {
       return item.icon;
     }
-    // آیکون‌های جایگزین برای زمانی که عکس لود نشود
     return 'fa-solid fa-file-invoice-dollar';
   }
 }

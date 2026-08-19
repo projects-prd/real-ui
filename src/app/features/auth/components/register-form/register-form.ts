@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { BaseFormComponent } from '@shared/base/base-form.component';
-import { LoginCredentials, RegisterCredentials } from '@features/auth/models/auth.model';
+import { RegisterCredentials } from '@features/auth/models/auth.model';
 import { AuthService } from '@features/auth/services/auth.service';
 
 function passwordMatchValidator(control: AbstractControl): ValidationErrors | null {

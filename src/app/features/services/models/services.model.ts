@@ -4,8 +4,6 @@ export interface ServiceItem {
   icon?: string;
   isImage?: boolean;
   routerLink?: string;
-
-  // علامت سوال (?) اجباری بودن را برمی‌دارد و خطا را کاملاً برطرف می‌کند
   subtitle?: string;
   bgGradient?: string;
   image?: string;

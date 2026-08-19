@@ -17,6 +17,6 @@ export interface ServiceItem {
   templateUrl: 'service-card.html',
   styleUrl: 'service-card.scss',
 })
-export class ServiceCardComponent  {
+export class ServiceCardComponent {
   @Input({ required: true }) item!: any;
 }

@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s;
 
   @media (max-width: 960px) {
     padding-top: 140px;

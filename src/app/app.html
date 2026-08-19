@@ -19,9 +19,18 @@
   <app-menu-bar></app-menu-bar>
 }
 
-<!-- بدون هیچ تگ اضافی دور روتر اوت‌لت -->
-<router-outlet />
+<div [class.hide-during-loading]="loadingService.isLoading()">
+  <router-outlet></router-outlet>
+</div>
 
 @if (!isAuthPage()) {
   <app-footer></app-footer>
 }
+<app-loading
+  [visible]="loadingService.isLoading()"
+  [message]="loadingService.message()"
+  [overlay]="true"
+  [fullScreen]="false"
+  variant="spinner"
+  size="md"
+/>

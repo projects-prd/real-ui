@@ -16,16 +16,18 @@
 //     return this.http.post(`${this.dbUrl}/users.json`, credentials);
 //   }
 // }
-import { AfterViewInit, inject, Injectable, OnInit, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  user,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
   signInWithPopup,
-  UserCredential,
+  signOut,
+  updateProfile,
+  user,
+  UserCredential
 } from '@angular/fire/auth';
 import { from, Observable } from 'rxjs';
 import { LoginCredentials, RegisterCredentials } from '@features/auth/models/auth.model';
@@ -51,8 +53,17 @@ export class AuthService {
       this.auth,
       credentials.email,
       credentials.password,
-    );
+    ).then(async (credential) => {
+      if (credentials.fullName) {
+        await updateProfile(credential.user, { displayName: credentials.fullName });
+      }
+      return credential;
+    });
     return from(promise);
+  }
+
+  resetPassword(email: string): Observable<void> {
+    return from(sendPasswordResetEmail(this.auth, email));
   }
 
   loginWithGoogle(): Observable<UserCredential> {

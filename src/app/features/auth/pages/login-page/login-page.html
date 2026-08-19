@@ -27,6 +27,8 @@
 
     <app-login-form
       (formSubmit)="onLoginSubmit($event)"
+      (googleLogin)="onGoogleLogin()"
+      (forgotPasswordClick)="onForgotPassword()"
     />
 
     <div class="mt-8 cursor-pointer text-center text-base text-slate-500">

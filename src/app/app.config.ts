@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -9,7 +9,7 @@ import { environment } from '@env/environment';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { MessageService } from 'primeng/api';
-
+import { loadingInterceptor } from '@core/interceptors/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideDatabase(() => getDatabase()),
 
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([loadingInterceptor])),
 
     MessageService,
 
@@ -38,8 +38,6 @@ export const appConfig: ApplicationConfig = {
     }),
   ],
 };
-
-
 
 // import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 // import { provideRouter } from '@angular/router';
@@ -84,13 +82,6 @@ export const appConfig: ApplicationConfig = {
 //     }),
 //   ],
 // };
-
-
-
-
-
-
-
 
 // import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 // import { provideRouter } from '@angular/router';
